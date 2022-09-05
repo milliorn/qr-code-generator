@@ -1,11 +1,20 @@
-html {
-  background-color: rgb(107 114 128);
-}
-
 button {
   background-color: rgb(75 85 99);
   margin-top: 14rem;
   padding: 0.125rem 0.25rem;
+}
+
+button,
+#generated #save-link {
+  color: white;
+}
+
+button,
+input,
+select,
+#generated #save-link,
+#generated #save-link:hover {
+  border-radius: 0.25rem;
 }
 
 button,
@@ -16,30 +25,17 @@ select,
   width: 100%;
 }
 
-button,
-#generated #save-link {
-  color: white;
-}
-
-button,
-input,
-select {
-  border-radius: 0.25rem;
-}
-
 button:hover {
-  background-color: rgb(115 115 115);
   color: rgb(75 85 99);
+}
+
+button:hover,
+#generated #save-link:hover {
+  background-color: rgb(115 115 115);
 }
 
 form {
   margin-top: 1rem;
-}
-
-header {
-  background-color: rgb(239, 68, 68);
-  margin-bottom: 2.5rem;
-  padding: 1rem;
 }
 
 h1 {
@@ -48,19 +44,38 @@ h1 {
 }
 
 h1,
-input {
-  margin-bottom: 1.25rem;
+#header-div-title,
+#generated #save-link {
+  font-weight: bold;
 }
 
 h1,
-#header-div-title {
-  font-weight: bold;
+input {
+  margin-bottom: 1.25rem;
 }
 
 h1,
 p,
 #generated {
   color: rgb(249 250 251);
+}
+
+header {
+  padding: 1rem;
+}
+
+header,
+#main-div-img-container img {
+  margin-bottom: 2.5rem;
+}
+
+header,
+#generated #save-link {
+  background-color: rgb(239, 68, 68);
+}
+
+html {
+  background-color: rgb(107 114 128);
 }
 
 input,
@@ -110,10 +125,22 @@ svg {
   text-align: center;
 }
 
+#generated #save-link {
+  margin: 1.25rem auto;
+  padding: 0.5rem 0rem;
+  width: 33.333333%;
+}
+
+#generated #save-link:hover {
+  border: solid;
+  color: rgb(239, 68, 68);
+}
+
 #generated,
 #header-div,
 #main-div,
-#qrcode {
+#qrcode,
+#main-div-img-container img {
   margin: auto;
 }
 
@@ -145,26 +172,7 @@ svg {
 }
 
 #main-div-img-container img {
-  margin: auto;
-  margin-bottom: 2.5rem;
   width: 50%;
-}
-
-#generated #save-link {
-  background-color: rgb(239, 68, 68);
-  border-radius: 0.25rem;
-  font-weight: bolder;
-  margin: 1.25rem auto;
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
-  width: 33.333333%;
-}
-
-#generated #save-link:hover {
-  background-color: rgb(115 115 115);
-  border-radius: 0.25rem;
-  border: solid;
-  color: rgb(239, 68, 68);
 }
 
 #spinner {
@@ -175,6 +183,7 @@ svg {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
