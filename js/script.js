@@ -1,31 +1,37 @@
-const form = document.getElementById("generate-form");
+const generateForm = document.getElementById("generate-form");
 const qr = document.getElementById("qrcode");
 
+/* Button submit */
 const onGenerateSubmit = (e) => {
   e.preventDefault();
 
-  clearUI;
+  clearUI();
 
   const url = document.getElementById("url").value;
   const size = document.getElementById("size").value;
 
+  /* Validate and execute */
   if (url === "") {
     alert("Please enter URL");
   } else {
     showSpinner();
-
+    /* Show spinner */
     setTimeout(() => {
       hideSpinner();
-
       generateQRCode(url, size);
+
+      /* Generate the save button when qr code image src is ready */
       setTimeout(() => {
+        /* Get save url */
         const saveUrl = qr.querySelector("img").src;
+        /* Create save button */
         createSaveBtn(saveUrl);
       }, 50);
     }, 1000);
   }
 };
 
+/* Generate QR code */
 const generateQRCode = (url, size) => {
   const qrcode = new QRCode("qrcode", {
     text: url,
@@ -34,23 +40,28 @@ const generateQRCode = (url, size) => {
   });
 };
 
-const showSpinner = () => {
-  document.getElementById("spinner").style.display = "block";
-};
-
-const hideSpinner = () => {
-  document.getElementById("spinner").style.display = "none";
-};
-
+/* Clear QR code and save button */
 const clearUI = () => {
   qr.innerHTML = "";
   const saveBtn = document.getElementById("save-link");
-
-  if (savelink) {
-    savelink.remove();
+  if (saveBtn) {
+    saveBtn.remove();
   }
 };
 
+/* Show spinner */
+const showSpinner = () => {
+  const spinner = document.getElementById("spinner");
+  spinner.style.display = "block";
+};
+
+/* Hide spinner */
+const hideSpinner = () => {
+  const spinner = document.getElementById("spinner");
+  spinner.style.display = "none";
+};
+
+/* Create save button to download QR code as image */
 const createSaveBtn = (saveUrl) => {
   const link = document.createElement("a");
   link.id = "save-link";
@@ -64,4 +75,4 @@ const createSaveBtn = (saveUrl) => {
 
 hideSpinner();
 
-form.addEventListener("submit", onGenerateSubmit);
+generateForm.addEventListener("submit", onGenerateSubmit);
