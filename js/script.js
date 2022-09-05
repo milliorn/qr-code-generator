@@ -26,7 +26,7 @@ const onGenerateSubmit = (e) => {
         const saveUrl = qr.querySelector("img").src;
         /* Create save button */
         createSaveBtn(saveUrl);
-      }, 50);
+      }, 200);
     }, Math.floor(Math.random() * 3000));
   }
 };
@@ -65,9 +65,6 @@ const hideSpinner = () => {
 const createSaveBtn = (saveUrl) => {
   const link = document.createElement("a");
   link.id = "save-link";
-  //link.classList =
-  //" hover:bg-red-700";
-
   link.href = saveUrl;
   link.download = "qrcode";
   link.innerHTML = "Save Image";

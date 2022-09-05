@@ -1,15 +1,35 @@
+html {
+  background-color: rgb(107 114 128);
+}
+
 button {
-  border-radius: 0.25rem;
-  width: 100%;
-  color: white;
   background-color: rgb(75 85 99);
   margin-top: 14rem;
   padding: 0.125rem 0.25rem;
 }
 
+button,
+input,
+select,
+#main-div-child,
+#main-div-img-container {
+  width: 100%;
+}
+
+button,
+#generated #save-link {
+  color: white;
+}
+
+button,
+input,
+select {
+  border-radius: 0.25rem;
+}
+
 button:hover {
+  background-color: rgb(115 115 115);
   color: rgb(75 85 99);
-  background-color: white;
 }
 
 form {
@@ -24,23 +44,37 @@ header {
 
 h1 {
   font-size: 1.5rem;
-  font-weight: bold;
   line-height: 2rem;
+}
+
+h1,
+input {
   margin-bottom: 1.25rem;
 }
 
-input {
+h1,
+#header-div-title {
+  font-weight: bold;
+}
+
+h1,
+p,
+#generated {
+  color: rgb(249 250 251);
+}
+
+input,
+select,
+svg {
   border-color: rgb(229 231 235);
-  border-radius: 0.25rem;
   border-width: 0.125rem;
   color: rgb(17 24 39);
-  margin-bottom: 1.25rem;
   margin-right: 0.5rem;
   padding: 0.75rem;
-  width: 100%;
 }
 
-input:focus {
+input:focus,
+select:focus {
   outline: none;
 }
 
@@ -48,30 +82,16 @@ p {
   margin-bottom: 1rem;
 }
 
-select {
-  border-color: rgb(229 231 235);
-  border-radius: 0.25rem;
-  border-width: 0.125rem;
-  color: rgb(17 24 39);
-  margin-right: 0.5rem;
-  padding: 0.75rem;
-  width: 100%;
-}
-
-select:focus {
-  outline: none;
-}
-
 span {
-  position: absolute;
-  width: 1px;
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
   height: 1px;
-  padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  padding: 0;
+  position: absolute;
   white-space: nowrap;
-  border-width: 0;
+  width: 1px;
 }
 
 svg {
@@ -80,77 +100,71 @@ svg {
   display: inline;
   fill: #db2777;
   height: 6rem;
-  margin-right: 0.5rem;
   width: 6rem;
 }
 
 #generated {
-  align-self: center;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
   margin-top: 5rem;
-  margin: auto;
   max-width: 64rem;
   text-align: center;
 }
 
-#header-div {
+#generated,
+#header-div,
+#main-div,
+#qrcode {
   margin: auto;
 }
 
+#generated,
+#main-div {
+  display: flex;
+  justify-content: center;
+}
+
+#generated,
+#main-div,
+#main-div-img-container {
+  align-self: center;
+}
+
 #header-div-title {
-  color: white;
+  color: rgb(254 242 242);
   font-size: 1.25rem;
-  font-weight: bold;
   line-height: 1.75rem;
 }
 
 #main-div {
-  align-self: center;
-  display: flex;
   flex-direction: column-reverse;
-  justify-content: center;
-  margin: auto;
   padding: 2.5rem;
 }
 
 #main-div-child {
   margin-right: 6rem;
-  width: 100%;
-}
-
-#main-div-img-container {
-  align-self: center;
-  width: 100%;
 }
 
 #main-div-img-container img {
-  width: 50%;
   margin: auto;
   margin-bottom: 2.5rem;
-}
-
-#qrcode {
-  margin: auto;
+  width: 50%;
 }
 
 #generated #save-link {
   background-color: rgb(239, 68, 68);
-  color: white;
-  font-weight: bolder;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
   border-radius: 0.25rem;
-  width: 33.333333%;
+  font-weight: bolder;
   margin: 1.25rem auto;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  width: 33.333333%;
 }
 
 #generated #save-link:hover {
-  background-color: white;
-  color: rgb(239, 68, 68);
-  border: solid;
+  background-color: rgb(115 115 115);
   border-radius: 0.25rem;
+  border: solid;
+  color: rgb(239, 68, 68);
 }
 
 #spinner {
